@@ -1,7 +1,12 @@
-let modelo = Number(prompt("Ingrese el número de modelo de su automóvil:"));
+let modelo;
+do {
+    modelo = Number(prompt("Ingrese el número de modelo de su automóvil:"));
+} while (isNaN(modelo) || modelo < 0);
 
-if (modelo === 119 || modelo === 179 || (modelo >= 189 && modelo <= 195) || modelo === 221 || modelo === 780) {
-    alert("El automóvil está defectuoso, llevar a garantía.");
-} else {
-    alert("Su automóvil no está defectuoso.");
+switch (true) {
+    case (modelo === 119 || modelo === 179 || (modelo >= 189 && modelo <= 195) || modelo === 221 || modelo === 780):
+        alert("El automóvil está defectuoso, llevar a garantía.");
+        break;
+    default:
+        alert("Su automóvil no está defectuoso.");
 }

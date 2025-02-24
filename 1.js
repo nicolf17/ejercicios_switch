@@ -1,22 +1,41 @@
-let nombre= prompt("Ingrese su nombre: ")
-let horas= Number(prompt("Ingrese la cantidad de horas que trabajo esta semana:"))
-let salario= horas*30000
-let salarioHorasExtra=horas*33000
+let nombre = prompt("Ingrese su nombre: ")
+let horas
+let salario
+let salarioHorasExtra
 
-if(horas>10){
-    alert(`Señor/a ${nombre}, el numero de horas es ${horas} y su salario es de: `+ salarioHorasExtra)
-    console.log(`Señor/a ${nombre}, el numero de horas es ${horas} y su salario es de: `+ salarioHorasExtra)
-    document.write(`Señor/a ${nombre}, el numero de horas es ${horas} y su salario es de: `+ salarioHorasExtra)
-}else if(horas>0 && horas<=10){
-    alert(`Señor/a ${nombre}, el numero de horas es ${horas} y su salario es de: `+ salario)
-    console.log(`Señor/a ${nombre}, el numero de horas es ${horas} y su salario es de: `+ salario)
-    document.write(`Señor/a ${nombre}, el numero de horas es ${horas} y su salario es de: `+ salario)
-}else if(horas==0){
-    alert("Si no has trabajado, no hay sueldo")
-    console.log("Si no has trabajado, no hay sueldo")
-    document . write("Si no has trabajado, no hay sueldo")
-}else{
-    alert("...")
-    console.log("...");
-    document.write("...")
+do {
+    horas = Number(prompt("Ingrese la cantidad de horas que trabajó esta semana:"))
+
+    if (horas < 0) {
+        mensaje= ("Las horas trabajadas no pueden ser negativas. Por favor, ingrese un valor válido.")
+    }
+
+} while (horas < 0)
+
+salario = horas * 30000
+salarioHorasExtra = horas * 33000
+
+let salarioFormateado = salario.toLocaleString("es-ES");
+let salarioHorasExtraFormateado = salarioHorasExtra.toLocaleString("es-ES");
+
+switch (true) {
+    case (horas > 10):
+        mensaje= (`Señor/a ${nombre}, el número de horas es ${horas} y su salario es de: ${salarioHorasExtraFormateado} pesos`);
+        break;
+
+    case (horas > 0 && horas <= 10):
+        mensaje= (`Señor/a ${nombre}, el número de horas es ${horas} y su salario es de: ${salarioFormateado} pesoss`);
+        break;
+
+    case (horas === 0):
+        mensaje= ("Si no has trabajado, no hay sueldo");
+        break;
+
+    default:
+        mensaje= ("Opción no válida");
+        break;
 }
+
+mensaje= (mensaje);
+console.log(mensaje);
+document.write(mensaje);

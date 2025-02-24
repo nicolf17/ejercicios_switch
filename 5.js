@@ -15,14 +15,15 @@ let informatica= pedirNota("inofrmatica")
 let calificacion
 let porcentaje= ((fisica+quimica+biologia+matematicas+informatica)/50)*100
 
-if (porcentaje>80){
-    calificacion= ("excelente")
-
-}else if(porcentaje>=60){
-    calificacion= ("buena")
-
-}else{
-    calificacion= ("mala")
+if (porcentaje > 80) {
+    calificacion = "Excelente"
+} else if (porcentaje > 60) {
+    calificacion = "Buena"
+} else if (porcentaje > 0) {
+    calificacion = "Mala"
+} else {
+    calificacion = "Inválida"
 }
+
 
 alert(`Tu porcentaje es del ${porcentaje}% y tu calificacion es ${calificacion}`)

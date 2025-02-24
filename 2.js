@@ -1,7 +1,12 @@
-let numero= 3
+let numero = "dos"
 
-if(numero %2 ===0){
-    console.log("El numero que ingreso es un numero par");
-}else{
-    console.log("El numero que ingreso es un numero impar");
+switch (numero % 2) {
+    case 0:
+        console.log("El numero que ingreso es un numero par")
+        break
+    case 1:
+        console.log("El numero que ingreso es un numero impar")
+        break
+    default:
+        console.log("El dato ingresado no es un numero")
 }

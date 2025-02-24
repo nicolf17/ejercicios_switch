@@ -1,9 +1,22 @@
-let numero= prompt("Ingrese un numero: ")
+let numero 
+let mensaje
 
-if(numero %2 ===0){
-    alert("El numero que ingreso es un numero par")
-    document.write("El numero que ingreso es un numero par")
-}else{
-    alert("El numero que ingreso es un numero impar")
-    document.write("EL numero que ingreso es un numero impar")
-}
+do {
+    numero = Number(prompt("Ingrese un número"))
+    if (isNaN(numero)) {
+        alert("El dato ingresado no es valido, hazlo de nuevo")
+    }
+}while (isNaN(numero))
+
+    switch (numero % 2) {
+        case 0:
+            mensaje = (`El ${numero} es un numero par`)
+            break
+        case 1:
+            mensaje = (`El ${numero} es un numero impar`)
+            break
+    }
+
+alert(mensaje);
+console.log(mensaje);
+document.write(mensaje);
